@@ -12,7 +12,6 @@ const contactsSchema = new Schema(
     },
     email: {
       type: String,
-      required: true,
     },
     isFavourite: {
       type: Boolean,
@@ -21,6 +20,8 @@ const contactsSchema = new Schema(
     },
     contactType: {
       type: String,
+      enum: ['work', 'home', 'personal'],
+      default: 'personal',
       required: true,
     },
   },
