@@ -1,0 +1,50 @@
+tags:
+  - Auth
+summary: Login user
+operationId: loginUser
+description: 'Login user with payload'
+security:
+  - bearerAuth: []
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - email
+          - password
+        properties:
+          email:
+            description: "User's email"
+            type: string
+            example: 'yulia9@example.com'
+          password:
+            description: "User's password"
+            type: string
+            example: '6787a1d0d6ef4a540d218377'
+responses:
+  '200':
+    description: Login user
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 200
+            message:
+              type: string
+              example: Successfully logged user!
+            data:
+              type: object
+              properties:
+                accessToken:
+                  type: string
+                  example: eyJhbGciOiJIUzI1NiIsOuR5cha6IkpXVCJ9.eyJlbWFpbCI6ImR5mHVyeW5AZ21haWjsY29tIiwiaWF0IjpsNzM3NTU0MjYxLCJleHAiOjE3Mzc1ufQ1NjF9.fIOeZ6Yu6kn0PsQkdj8X5vHIu8LfTeIBgyWRuA1r0Ho
+  '400':
+    $ref: '../../components/responses/400.yaml'
