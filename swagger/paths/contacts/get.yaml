@@ -86,7 +86,7 @@ responses:
                   example: 4
                 hasNextPage:
                   type: boolean
-                  example: false
+                  example: true
                 hasPreviousPage:
                   type: boolean
                   example: true

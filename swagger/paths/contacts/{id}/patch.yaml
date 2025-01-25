@@ -11,7 +11,7 @@ parameters:
     required: true
     schema:
       type: string
-      example: 65ca67e7ae7f10c88b598384
+      example: 6787a1d0d6ef4a540d218377
 requestBody:
   content:
     multipart/form-data:
@@ -41,7 +41,7 @@ requestBody:
           photo:
             description: "Link to contact's photo"
             type: string
-            format: https://res.cloudinary.com/djhep7hnv/image/upload/v1737552877/image.webp
+            format: binary
 responses:
   '200':
     description: Update a contact
